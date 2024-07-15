@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat,Poppins } from "next/font/google";
 import "./globals.css";
 import clsx from "clsx";
+import { StoreProvider } from "@/store/provider";
 
 const montserrat = Montserrat({ 
   subsets: ["latin"],
@@ -29,7 +30,11 @@ export default function RootLayout({
       <body className={clsx(
           montserrat.variable,
           poppins.variable,
-        )}>{children}</body>
+        )}>
+          <StoreProvider>
+          {children}
+          </StoreProvider>
+          </body>
     </html>
   );
 }
