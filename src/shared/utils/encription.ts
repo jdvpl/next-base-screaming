@@ -61,7 +61,7 @@ export class EncriptionSessionStorage {
       'use client'
        static getDataCriptedSession<T>(
         key: string,
-        defaultValue: T | (() => T)
+        defaultValue: Partial<T>| (() => T)
       ): T {
         let stored: string | null = null;
       
@@ -78,7 +78,7 @@ export class EncriptionSessionStorage {
         return data as T;
       }
 
-
+      
        static setDataCriptedSession<T = any>(
         key: string,
         value: Partial<T> | (() => T)

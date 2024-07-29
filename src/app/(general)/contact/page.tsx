@@ -1,11 +1,11 @@
 import React, { Suspense } from 'react'
 
-const StepperLayout = ({children}) => {
+const Contact = () => {
   return (
     <Suspense fallback={null}>
-      {children}
+      Contact 333
     </Suspense>
   )
 }
 
-export default StepperLayout
+export default Contact
